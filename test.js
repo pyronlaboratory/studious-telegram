@@ -1,4 +1,4 @@
-const search = (arr, x, start, end) => {
+const searching = (arr, x, start, end) => {
   if (start > end) return false;
   let mid = Math.floor((start + end) / 2);
   if (arr[mid] === x) return true;
