@@ -1,3 +1,4 @@
+<<<<<<< komment/main
 /**
  * @description Iteratively compares an element 'x' with half of the total number of
  * elements 'start to 'end'. If it finds a matching element at any iteration, it
@@ -17,6 +18,8 @@
  * @returns {boolean} a boolean value indicating whether the specified element exists
  * within the provided array.
  */
+=======
+>>>>>>> main
 const searching = (arr, x, start, end) => {
   if (start > end) return false;
   let mid = Math.floor((start + end) / 2);
