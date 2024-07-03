@@ -1,20 +1,22 @@
 /**
- * @description Searches for an element `x` in an array `arr` within a specified range
- * `start` to `end`. It returns `true` if `x` is found, and `false` otherwise.
+ * @description Checks if a specific value `x` is present in an array `arr` within a
+ * specified range `start` and `end`. It returns true if the value is found, otherwise
+ * it recursively searches for the value.
  * 
- * @param {array} arr - 2D array to be searched for the specified value `x`.
+ * @param {array} arr - 2D array to be searched for the specified element `x`.
  * 
  * @param {number} x - value being searched for in the array.
  * 
- * @param {integer} start - index of the left boundary of the subarray to search within.
+ * @param {number} start - index of the left boundary of the subarray to search within
+ * the original array.
  * 
- * @param {integer} end - 2nd half of the array to be searched for the specified value
- * `x`.
+ * @param {number} end - 2nd index of the array, indicating the position after which
+ * the search should continue from the middle index calculated in the function.
  * 
- * @returns {boolean} a boolean indicating whether the value `x` is present in the
- * array within the specified range.
+ * @returns {boolean} a boolean value indicating whether the element `x` exists within
+ * the provided range in the array `arr`.
  */
-const search = (arr, x, start, end) => {
+const searching = (arr, x, start, end) => {
   if (start > end) return false;
   let mid = Math.floor((start + end) / 2);
   if (arr[mid] === x) return true;
@@ -26,10 +28,10 @@ const search = (arr, x, start, end) => {
 };
 
 /**
- * @description Retrieves the application ID based on the input parameters and logs
- * the result to the pipeline log.
+ * @description Retrieves and returns the application ID for a given parameter value.
+ * It uses the `GlideRecord` class to query the database and retrieve the app ID.
  * 
- * @returns {string} a unique identifier for an application.
+ * @returns {integer} a unique identifier for the given business application.
  */
 const getApplicationID = () => {
   var appID = "";
@@ -43,15 +45,15 @@ const getApplicationID = () => {
 }
 
 /**
- * @description Takes an array of cell states as input and generates a new generation
- * of cells based on a simple neighbours-counting algorithm, where alive cells have
- * at least two or three living neighbours to survive. The output is an array of cell
- * states representing the next generation.
+ * @description Takes an array of cell values as input and returns a new generation
+ * of cells, generated through a simple cellular automata ruleset.
  * 
- * @param {array} cells - 2D array of cells to be iterated over and used to generate
- * the next generation.
+ * @param {array} cells - 2D array of cells, where each cell can be alive (represented
+ * by `1`) or dead (`0`), and is used to generate the next generation of cells through
+ * a set of rules based on the neighbors of each cell.
  * 
- * @returns {array} an array of booleans representing the alive cells in the next generation.
+ * @returns {array} a new generation of cells, where each cell is labeled as alive
+ * or dead based on its neighbors and the number of alive cells in its vicinity.
  */
 function newGeneration(cells) {
   const nextGeneration = []
